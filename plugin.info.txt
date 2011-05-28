@@ -1,0 +1,7 @@
+base credits
+author Myron Turner
+email turnermm02@shaw.ca
+date 2011-05-28
+name Credits Plugin
+desc Configurable Display of Plugin Credits
+url http://www.dokuwiki.org/plugin:credits

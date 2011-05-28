@@ -1,0 +1,37 @@
+/**
+ *   Plugin; Credits
+ *   Author: Myron Turner
+ *   turnermm03@shaw.ca
+*/
+
+
+
+Credits is a highly configurable plugin for displaying credits for DokuWiki plugins.  Using the configuration manager, all of the CSS settings can be changed, as well as the title (Plugins) and subtitle (Credits) strings.
+
+The syntax is one of the following:
+
+      <<CREDITS:>>
+      <<CREDITS:~nodesc~>>
+      <<CREDITS:user_defined_function>>
+
+
+The first form will use the default rendering, subject to any changes in settings made in the Configuration Manager. 
+
+The second form will turn off the printing of the plugin descriptions. This is the desc field returned by the plugin's getInfo() method. The descriptions can also be turned off in the Configuration Manager.
+
+The third form will invoke a user-defined function for formatting the the output. 
+
+There is a sample user-defined function in the syntax.php file:
+     function alt_credits(&$renderer,$info)
+
+$info has access to all of the fields returned by the getInfo() function of each plugin; alt_credits()
+will print out the following information for each plugin on your system:
+
+User Manager
+author: Chris Smith
+email: email@address.com;
+date: 2005-11-24
+name: User Manager
+desc: Manage users
+url: http://wiki.splitbrain.org/plugin:user_manager
+
