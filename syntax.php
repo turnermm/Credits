@@ -124,7 +124,7 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
     }
   
             $renderer->doc .= $this->mouseover($renderer);            
-            $renderer->doc .= "<div style='margin:2em; font-size: $text_size; font-weight:$text_weight; ";
+            $renderer->doc .= "<div id='credits_d' style='margin:1em; font-size: $text_size; font-weight:$text_weight; ";
             $renderer->doc .= "font-family: $family; line-height: $line_height; color: $text_color; '>\n";
             $renderer->doc .= $title;
             $renderer->doc .= $subtitle;

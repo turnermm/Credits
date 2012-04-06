@@ -15,14 +15,16 @@ var left;
   else {
         return;
   }
-    top -= 32;
+ 
     left -= 24;
-
-   
+    pos = getElementPosition('credits_d');
+ 
     if(date.length > 100) {
-//       left = 20;         
+       left = 20;         
     }
-
+	pos.top-=32;
+   top -= pos.top;
+   
     if(document.body.scrollLeft || document.body.scrollTop) {
          top+=document.body.scrollTop;         
          left += document.body.scrollLeft;
@@ -71,4 +73,20 @@ function pcredits_mouseout(id) {
            hide_remainder(id); 
     }
 
+}
+
+function getElementPosition(elemID){
+var offsetTrail = document.getElementById(elemID);
+var offsetLeft = 0;
+var offsetTop = 0;
+while (offsetTrail){
+offsetLeft += offsetTrail.offsetLeft;
+offsetTop += offsetTrail.offsetTop;
+offsetTrail = offsetTrail.offsetParent;
+}
+if (navigator.userAgent.indexOf('Mac') != -1 && typeof document.body.leftMargin != 'undefined'){
+offsetLeft += document.body.leftMargin;
+offsetTop += document.body.topMargin;
+}
+return {left:offsetLeft,top:offsetTop};
 }
