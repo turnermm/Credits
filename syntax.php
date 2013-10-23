@@ -13,19 +13,6 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
     var $types = array('admin','helper','syntax','action','renderer');   
     var $keys;
     var $show_descriptions = true;    
-   /**
-     * return some info
-     */
-    function getInfo(){
-        return array(
-            'author' => 'Myron Turner',
-            'email'  => 'turnermm02@shaw.ca',
-            'date'   => '2007-06-18',
-            'name'   => 'credits',
-            'desc'   => 'Displays Credits for installed plugins',
-            'url'    => '',
-        );
-    }
  
     function getType(){ return 'substition'; }
     function getAllowedTypes() { return array(); }   
