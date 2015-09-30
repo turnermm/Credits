@@ -175,7 +175,8 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
         if(!$type) return; 
         $plugins = plugin_list($type);
         foreach($plugins as $p){
-            if (!$po =& plugin_load($type,$p)) continue;
+            if (!$po = plugin_load($type,$p)) continue;
+            if(!method_exists($po,'getInfo')) continue;
             $info = $po->getInfo();           
             $this->plugins[$info['name']] = $info;              
             unset($po); 
