@@ -121,7 +121,9 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
             foreach($this->keys as $name) {
                   $date = isset($this->plugins[$name]['date'])?$this->plugins[$name]['date']:"" ;
                   $author = isset($this->plugins[$name]['author'])?$this->plugins[$name]['author']:"" ; 
-
+                  if(!isset($this->plugins[$name]['email'])) { 
+                      $this->plugins[$name]['email'] = str_replace(" ", "_",$author) . "@No_Email_Given";
+                  }
                   if(isset($this->plugins[$name]['email'])) { 
                         $remainder = "";
                         $desc = "";
