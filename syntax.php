@@ -21,7 +21,7 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
     function connectTo($mode) {
          $this->Lexer->addSpecialPattern('<<CREDITS:.*?>>',$mode,'plugin_credits'); }
 
-    function handle($match, $state, $pos, &$handler) {                 
+    function handle($match, $state, $pos, Doku_Handler $handler) {                 
              preg_match('/<<CREDITS:(.*?)>>/', $match,$matches); 
                  
              return array( $state, $matches[1]);
@@ -31,7 +31,7 @@ class syntax_plugin_credits extends DokuWiki_Syntax_Plugin {
   /**
      * Create output
      */
-    function render($mode, &$renderer, $data) {
+    function render($mode, Doku_Renderer $renderer, $data) {
         if($mode == 'xhtml'){
             $this->get_plugin_array();
             list($state, $match) = $data;                     
